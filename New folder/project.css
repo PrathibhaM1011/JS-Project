@@ -1,0 +1,471 @@
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FBC2EB 0%, #A6C1EE 100%);
+    color: #333;
+    overflow: visible;
+}
+
+
+header {
+    background: linear-gradient(135deg, #A6C1EE 0%, #FBC2EB 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    height:80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo img {
+    height: 90px;
+    border-radius: 50%; 
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+}
+
+#searchBar {
+    border: 1px solid #007b6d;
+    border-radius: 15px;
+    outline: none;
+    padding: 5px 10px;
+    width: 400px;
+    height:30px;
+    background: transparent;
+    
+}
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    color: #aaa;
+}
+
+.search-input {
+    padding-left: 0px; /* Space for the icon */
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+#sellbtn {
+    background-color: #ff6600;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#sellbtn:hover {
+    background-color: #e65c00;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #searchBar {
+        width: 180px;
+    }
+}
+
+
+
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.actions .logSign {
+    text-decoration: none;
+    background-color: #FFD1DC; /* Light Pink */
+    color: #555; /* Darker text for contrast */
+    border: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 2px solid #5aaaa0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.actions .logSign:hover {
+    background-color: #ffa4b9;
+    color: white;
+}
+
+.actions #sellbtn {
+    background-color: #07d300;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actions #sellbtn:hover {
+    background-color: #07d300;
+    transform: scale(1.05);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+    
+}
+
+.nav-icons div {
+    position: relative;
+}
+
+.nav-icons i {
+    font-size: 22px;
+    cursor: pointer;
+    color: #c67676;
+}
+
+.wishlist, .cart{
+    height:30px;
+
+}
+.cart-count, .wishlist-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+.hero-section {
+    position: relative;
+    background: url('https://static.vinted.com/assets/seller-promotion/other/banner-phones-2ab679df561d617d4e0ca27f862f78cf1bfeeba70fcdaa9afc19cc0fcb102c26.jpg') no-repeat center center/cover;
+    height: 600px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    
+}
+
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 700px; 
+    background: url('torn-paper.png') no-repeat center bottom/cover;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    position: absolute;
+    left:0px;
+    bottom:0px;
+
+}
+
+
+ .sell-btn {
+    background: #007b6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+   
+}
+
+.sell-btn:hover {
+    background: #005a50;
+}
+
+
+.learn-more {
+    margin-top: 10px;
+    color: #007b6d;
+    cursor: pointer;
+    z-index: 1; /* Increase the value */
+    position: relative;
+}
+#heroSellBtn {
+    position: relative;
+    z-index: 1; 
+    pointer-events: auto;
+}
+/* div.blocking-div {
+    pointer-events: none; 
+} */
+
+
+#results{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 40px; 
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 220px; 
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 5px 5px 0 0;
+}
+
+
+.wishlist-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-btn span {
+    font-size: 18px;
+    color: #999;
+}
+
+.wishlist-btn:hover span {
+    color: red;
+}
+
+
+.product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-brand {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-condition {
+    font-size: 12px;
+    color: #777;
+}
+
+.product-price {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.product-discount {
+    font-size: 14px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+
+
+footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f8b400;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f8b400;
+}
+
+/* Download Section */
+.footer-section.download img {
+    width: 150px;
+    margin: 5px 10px 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-section.download img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background: #111;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-icons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-container {
+        width: 90%;
+        justify-content: center;
+    }
+
+    #searchBar {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .actions #sellbtn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}

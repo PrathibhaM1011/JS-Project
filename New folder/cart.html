@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+#cartContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px;
+    transition: 0.3s;
+}
+
+.cart-item:hover {
+    background-color: #f1f1f1;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.cart-item p {
+    flex-grow: 1;
+    margin: 0 10px;
+    text-align: left;
+}
+
+.remove-from-cart {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-from-cart:hover {
+    background: #d9534f;
+}
+
+
+#cartContainer p {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2>🛒 Your Cart</h2>
+    <div id="cartContainer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const cartContainer = document.getElementById("cartContainer");
+
+    if (cartItems.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+    }
+
+    cartItems.forEach((item, index) => {
+        let cartItem = document.createElement("div");
+        cartItem.className = "cart-item";
+        cartItem.innerHTML = `
+            <img src="${item.image || 'placeholder.jpg'}" width="80" alt="${item.title}">
+            <p><strong>${item.title}</strong></p>
+            <p>Price: $${item.price?.amount?.amount || "N/A"}</p>
+            <button class="remove-from-cart" data-index="${index}">❌ Remove</button>
+        `;
+        cartContainer.appendChild(cartItem);
+    });
+
+   
+    document.querySelectorAll(".remove-from-cart").forEach(btn => {
+        btn.addEventListener("click", function () {
+            let itemIndex = Number(this.dataset.index);
+            cartItems.splice(itemIndex, 1); 
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            location.reload();
+        });
+    });
+});
+
+    </script>
+    
+
+</body>
+</html>
